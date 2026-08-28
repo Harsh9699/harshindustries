@@ -5,9 +5,8 @@ import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 
 export default function BusinessCardPage() {
-  const websiteUrl = "https://harshindustries.com"; // Change to the actual deployed domain
-  // Using an open API to generate a real working QR code in our theme color (Hex 2B5C3F without the #)
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(websiteUrl)}&color=2B5C3F&bgcolor=FBFBF9`;
+  const websiteUrl = "https://harshindustry.netlify.app"; 
+  const qrCodeUrl = "/images/website-qr.png";
 
   return (
     <>
