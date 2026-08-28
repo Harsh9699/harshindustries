@@ -3,6 +3,32 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const TreeSVG = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-primary opacity-20">
+    <path d="M12 2C7 2 3 6 3 11c0 2.15 1.13 4.05 2.85 5.15L8 22h8l2.15-5.85C19.87 15.05 21 13.15 21 11c0-5-4-9-9-9zM10 20v-3.5c-1.5-.5-2.5-1.5-3-3l1.5-1.5c1 1.5 2 2 3.5 2s2.5-.5 3.5-2l1.5 1.5c-.5 1.5-1.5 2.5-3 3V20h-4z"/>
+  </svg>
+);
+
+const LeafSVG = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
+     <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+  </svg>
+);
+
+const CupGraphic = () => (
+  <div className="relative w-[150px] h-[190px] flex flex-col items-center justify-center">
+    {/* Lip */}
+    <div className="w-[160px] h-[20px] rounded-[50%] bg-[#FBFBF9] border-[2px] border-primary/20 absolute top-[-10px] z-10 shadow-sm"></div>
+    {/* Body */}
+    <div 
+      className="absolute inset-0 bg-gradient-to-b from-white to-[#FBFBF9] shadow-[0_15px_30px_rgba(0,0,0,0.15)] border-b-[6px] border-surface/50 flex flex-col items-center justify-center"
+      style={{ clipPath: 'polygon(5% 0, 95% 0, 85% 100%, 15% 100%)' }}
+    >
+      <img src="/images/logo.png" className="w-[100px] h-auto opacity-95 z-10 mt-4" alt="Harsh Industries" />
+    </div>
+  </div>
+);
+
 export default function Preloader() {
   const [show, setShow] = useState(true);
 
@@ -21,32 +47,6 @@ export default function Preloader() {
       document.body.style.overflow = "";
     };
   }, []);
-
-  const TreeSVG = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-primary opacity-20">
-      <path d="M12 2C7 2 3 6 3 11c0 2.15 1.13 4.05 2.85 5.15L8 22h8l2.15-5.85C19.87 15.05 21 13.15 21 11c0-5-4-9-9-9zM10 20v-3.5c-1.5-.5-2.5-1.5-3-3l1.5-1.5c1 1.5 2 2 3.5 2s2.5-.5 3.5-2l1.5 1.5c-.5 1.5-1.5 2.5-3 3V20h-4z"/>
-    </svg>
-  );
-
-  const LeafSVG = () => (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
-       <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
-    </svg>
-  );
-
-  const CupGraphic = () => (
-    <div className="relative w-[150px] h-[190px] flex flex-col items-center justify-center">
-      {/* Lip */}
-      <div className="w-[160px] h-[20px] rounded-[50%] bg-[#FBFBF9] border-[2px] border-primary/20 absolute top-[-10px] z-10 shadow-sm"></div>
-      {/* Body */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-white to-[#FBFBF9] shadow-[0_15px_30px_rgba(0,0,0,0.15)] border-b-[6px] border-surface/50 flex flex-col items-center justify-center"
-        style={{ clipPath: 'polygon(5% 0, 95% 0, 85% 100%, 15% 100%)' }}
-      >
-        <img src="/images/logo.png" className="w-[100px] h-auto opacity-95 z-10 mt-4" alt="Harsh Industries" />
-      </div>
-    </div>
-  );
 
   return (
     <AnimatePresence>

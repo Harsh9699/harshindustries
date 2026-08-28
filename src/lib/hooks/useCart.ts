@@ -15,6 +15,7 @@ export function useCart() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+     
     setMounted(true);
     const stored = localStorage.getItem('harsh_cart');
     if (stored) {
@@ -31,7 +32,7 @@ export function useCart() {
 
   const addToCart = (item: Omit<CartItem, 'quantity'>, qty: number = 1) => {
     const stored = localStorage.getItem('harsh_cart');
-    let cart: CartItem[] = stored ? JSON.parse(stored) : [];
+    const cart: CartItem[] = stored ? JSON.parse(stored) : [];
     
     const existing = cart.find(i => i.slug === item.slug);
     if (existing) {
@@ -48,8 +49,7 @@ export function useCart() {
   const removeFromCart = (slug: string) => {
     const stored = localStorage.getItem('harsh_cart');
     if (!stored) return;
-    let cart: CartItem[] = JSON.parse(stored);
-    cart = cart.filter(i => i.slug !== slug);
+    const cart: CartItem[] = JSON.parse(stored).filter((i: CartItem) => i.slug !== slug);
     
     localStorage.setItem('harsh_cart', JSON.stringify(cart));
     window.dispatchEvent(new Event('harsh_cart_updated'));
@@ -59,7 +59,7 @@ export function useCart() {
   const updateQuantity = (slug: string, quantity: number) => {
     const stored = localStorage.getItem('harsh_cart');
     if (!stored) return;
-    let cart: CartItem[] = JSON.parse(stored);
+    const cart: CartItem[] = JSON.parse(stored);
     const existing = cart.find(i => i.slug === slug);
     if (existing) {
         existing.quantity = Math.max(1, quantity);
