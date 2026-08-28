@@ -64,7 +64,7 @@ export default function Navbar() {
           <Link href="/cart">
             <button className="bg-primary text-on-primary font-label-caps text-label-caps px-xl py-sm rounded-full hover:opacity-90 transition-opacity active:scale-95 shadow-sm flex items-center gap-xs">
               <span className="material-symbols-outlined text-[18px]">shopping_cart</span>
-              Cart {mounted && totalItems > 0 ? \(\)\ : ""}
+              Cart {mounted && totalItems > 0 ? `(${totalItems})` : ""}
             </button>
           </Link>
         </div>
