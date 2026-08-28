@@ -154,7 +154,7 @@ export default function CartPage() {
 
               {/* Checkout Form */}
               <div className="w-full lg:w-[450px] shrink-0">
-                <div className="bg-surface-container-lowest border brutalist-border rounded-xl p-lg sticky top-[120px]">
+                <div className="bg-surface-container-lowest border brutalist-border rounded-xl p-lg relative lg:sticky lg:top-[120px]">
                   <h2 className="font-headline-md text-headline-md text-on-surface mb-md pb-sm border-b border-outline-variant/30">Checkout Details</h2>
                   
                   <form onSubmit={handleSubmit} className="flex flex-col gap-md">

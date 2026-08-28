@@ -30,7 +30,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
           {/* Image Gallery */}
-          <div className="bg-surface-container-lowest border brutalist-border rounded-lg overflow-hidden h-[400px] md:h-[600px] sticky top-[120px]">
+          <div className="bg-surface-container-lowest border brutalist-border rounded-lg overflow-hidden h-[400px] md:h-[600px] relative md:sticky md:top-[120px]">
             <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('${product.image}')` }}
