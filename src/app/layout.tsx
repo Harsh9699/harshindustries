@@ -13,9 +13,19 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: "#556B2F",
+};
+
 export const metadata: Metadata = {
   title: "Harsh Industries - Premium Paper Products",
   description: "Manufacturer of Paper Cups, Paper Plate Raw Material, and Table Cover Rolls in Bhusawal MIDC.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Harsh Ind",
+  },
 };
 
 import Preloader from "@/components/layout/Preloader";
